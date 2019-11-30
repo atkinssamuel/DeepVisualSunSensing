@@ -11,7 +11,6 @@ seed = 42
 np.random.seed(seed)
 torch.manual_seed(seed)
 
-    ### Define the Convolutional Neural Network Model
 class CNN(torch.nn.Module):
     def __init__(self, num_bins):
         super(CNN, self).__init__()
@@ -28,7 +27,6 @@ class CNN(torch.nn.Module):
         self.relu = torch.nn.ReLU()
 
 
-        ###Define what the forward pass through the network is
     def forward(self, x):
         x = self.pool(self.relu(self.conv1(x)))
         x = self.pool(self.relu(self.conv2(x)))
